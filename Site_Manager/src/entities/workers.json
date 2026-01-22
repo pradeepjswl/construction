@@ -1,0 +1,79 @@
+{
+  "name": "workers",
+  "type": "object",
+  "required": [
+    "name",
+    "phone",
+    "skills",
+    "status",
+    "creator",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "name": {
+      "bsonType": "string",
+      "description": "Worker full name"
+    },
+    "phone": {
+      "bsonType": "string",
+      "description": "Contact phone number"
+    },
+    "email": {
+      "bsonType": "string",
+      "description": "Worker email address"
+    },
+    "skills": {
+      "bsonType": "array",
+      "description": "Array of worker skills (e.g., electrician, plumber, mason)",
+      "items": {
+        "bsonType": "string"
+      }
+    },
+    "proficiencyLevel": {
+      "bsonType": "string",
+      "description": "Skill proficiency level",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced",
+        "expert"
+      ]
+    },
+    "status": {
+      "bsonType": "string",
+      "description": "Worker employment status",
+      "enum": [
+        "active",
+        "inactive",
+        "on-leave"
+      ]
+    },
+    "address": {
+      "bsonType": "string",
+      "description": "Worker residential address"
+    },
+    "emergencyContact": {
+      "bsonType": "string",
+      "description": "Emergency contact number"
+    },
+    "creator": {
+      "bsonType": "string",
+      "description": "User who created this record"
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Record creation timestamp (ISO 8601)"
+    },
+    "updatedAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Record last update timestamp (ISO 8601)"
+    },
+    "creatorEmail": {
+      "bsonType": "string",
+      "description": "Creator user email"
+    }
+  }
+}

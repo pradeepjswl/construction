@@ -1,0 +1,91 @@
+{
+  "name": "hazards",
+  "type": "object",
+  "required": [
+    "title",
+    "description",
+    "severity",
+    "location",
+    "status",
+    "reportedBy",
+    "creator",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "title": {
+      "bsonType": "string",
+      "description": "Hazard title/summary"
+    },
+    "description": {
+      "bsonType": "string",
+      "description": "Detailed hazard description"
+    },
+    "severity": {
+      "bsonType": "string",
+      "description": "Hazard severity level",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "location": {
+      "bsonType": "string",
+      "description": "Location on site where hazard exists"
+    },
+    "status": {
+      "bsonType": "string",
+      "description": "Hazard resolution status",
+      "enum": [
+        "open",
+        "in-progress",
+        "resolved",
+        "closed"
+      ]
+    },
+    "reportedBy": {
+      "bsonType": "string",
+      "description": "Name/ID of person who reported the hazard"
+    },
+    "resolvedBy": {
+      "bsonType": "string",
+      "description": "Name/ID of person who resolved the hazard"
+    },
+    "resolvedAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Resolution timestamp (ISO 8601)"
+    },
+    "actionTaken": {
+      "bsonType": "string",
+      "description": "Description of corrective action taken"
+    },
+    "photoUrls": {
+      "bsonType": "array",
+      "description": "Array of photo URLs documenting the hazard",
+      "items": {
+        "bsonType": "string"
+      }
+    },
+    "creator": {
+      "bsonType": "string",
+      "description": "User who created this report"
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Report creation timestamp (ISO 8601)"
+    },
+    "updatedAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Report last update timestamp (ISO 8601)"
+    },
+    "creatorEmail": {
+      "bsonType": "string",
+      "description": "Creator user email"
+    }
+  }
+}

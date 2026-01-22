@@ -1,0 +1,102 @@
+{
+  "name": "materials",
+  "type": "object",
+  "required": [
+    "name",
+    "category",
+    "quantity",
+    "unit",
+    "minStockLevel",
+    "currentStock",
+    "creator",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "name": {
+      "bsonType": "string",
+      "description": "Material name"
+    },
+    "category": {
+      "bsonType": "string",
+      "description": "Material category",
+      "enum": [
+        "cement",
+        "steel",
+        "bricks",
+        "sand",
+        "gravel",
+        "pipes",
+        "wiring",
+        "paint",
+        "tools",
+        "equipment",
+        "other"
+      ]
+    },
+    "quantity": {
+      "bsonType": "number",
+      "description": "Total quantity available"
+    },
+    "unit": {
+      "bsonType": "string",
+      "description": "Unit of measurement",
+      "enum": [
+        "kg",
+        "tons",
+        "liters",
+        "meters",
+        "pieces",
+        "bags",
+        "boxes"
+      ]
+    },
+    "minStockLevel": {
+      "bsonType": "number",
+      "description": "Minimum stock level threshold for reorder alerts"
+    },
+    "currentStock": {
+      "bsonType": "number",
+      "description": "Current available stock"
+    },
+    "supplier": {
+      "bsonType": "string",
+      "description": "Supplier name"
+    },
+    "supplierContact": {
+      "bsonType": "string",
+      "description": "Supplier contact number"
+    },
+    "unitCost": {
+      "bsonType": "number",
+      "description": "Cost per unit"
+    },
+    "lastRestocked": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Last restock date (ISO 8601)"
+    },
+    "location": {
+      "bsonType": "string",
+      "description": "Storage location on site"
+    },
+    "creator": {
+      "bsonType": "string",
+      "description": "User who created this record"
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Record creation timestamp (ISO 8601)"
+    },
+    "updatedAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Record last update timestamp (ISO 8601)"
+    },
+    "creatorEmail": {
+      "bsonType": "string",
+      "description": "Creator user email"
+    }
+  }
+}

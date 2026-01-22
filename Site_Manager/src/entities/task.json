@@ -1,0 +1,103 @@
+{
+  "name": "tasks",
+  "type": "object",
+  "required": [
+    "title",
+    "description",
+    "assignedTo",
+    "priority",
+    "category",
+    "status",
+    "dueDate",
+    "estimatedHours",
+    "progress",
+    "creator",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "title": {
+      "bsonType": "string",
+      "description": "Task title"
+    },
+    "description": {
+      "bsonType": "string",
+      "description": "Detailed task description"
+    },
+    "assignedTo": {
+      "bsonType": "string",
+      "description": "Worker ID assigned to this task"
+    },
+    "priority": {
+      "bsonType": "string",
+      "description": "Task priority level",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "category": {
+      "bsonType": "string",
+      "description": "Task category type",
+      "enum": [
+        "excavation",
+        "foundation",
+        "electrical",
+        "plumbing",
+        "masonry",
+        "finishing",
+        "inspection",
+        "other"
+      ]
+    },
+    "status": {
+      "bsonType": "string",
+      "description": "Current task status",
+      "enum": [
+        "pending",
+        "in-progress",
+        "completed",
+        "blocked"
+      ]
+    },
+    "dueDate": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Task due date (ISO 8601)"
+    },
+    "estimatedHours": {
+      "bsonType": "number",
+      "description": "Estimated hours to complete"
+    },
+    "progress": {
+      "bsonType": "int",
+      "description": "Task completion percentage (0-100)",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "notes": {
+      "bsonType": "string",
+      "description": "Additional task notes"
+    },
+    "creator": {
+      "bsonType": "string",
+      "description": "User who created this task"
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Task creation timestamp (ISO 8601)"
+    },
+    "updatedAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Task last update timestamp (ISO 8601)"
+    },
+    "creatorEmail": {
+      "bsonType": "string",
+      "description": "Creator user email"
+    }
+  }
+}

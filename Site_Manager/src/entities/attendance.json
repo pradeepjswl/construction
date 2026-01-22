@@ -1,0 +1,87 @@
+{
+  "name": "attendance",
+  "type": "object",
+  "required": [
+    "workerId",
+    "workerName",
+    "clockIn",
+    "date",
+    "geofenceStatus",
+    "creator",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "workerId": {
+      "bsonType": "string",
+      "description": "Reference to worker ID"
+    },
+    "workerName": {
+      "bsonType": "string",
+      "description": "Worker name for quick reference"
+    },
+    "clockIn": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Clock in timestamp (ISO 8601)"
+    },
+    "clockOut": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Clock out timestamp (ISO 8601)"
+    },
+    "date": {
+      "bsonType": "string",
+      "description": "Attendance date (YYYY-MM-DD format)"
+    },
+    "location": {
+      "bsonType": "object",
+      "description": "Geolocation data",
+      "properties": {
+        "latitude": {
+          "bsonType": "double",
+          "description": "Latitude coordinate"
+        },
+        "longitude": {
+          "bsonType": "double",
+          "description": "Longitude coordinate"
+        }
+      }
+    },
+    "geofenceStatus": {
+      "bsonType": "string",
+      "description": "Geofence verification status",
+      "enum": [
+        "inside",
+        "outside",
+        "not-verified"
+      ]
+    },
+    "totalHours": {
+      "bsonType": "number",
+      "description": "Total hours worked"
+    },
+    "notes": {
+      "bsonType": "string",
+      "description": "Additional attendance notes"
+    },
+    "creator": {
+      "bsonType": "string",
+      "description": "User who created this record"
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Record creation timestamp (ISO 8601)"
+    },
+    "updatedAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Record last update timestamp (ISO 8601)"
+    },
+    "creatorEmail": {
+      "bsonType": "string",
+      "description": "Creator user email"
+    }
+  }
+}
